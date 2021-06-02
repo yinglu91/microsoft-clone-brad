@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/layout/Navbar';
+import Showcase from './components/home/Showcase';
+import HomeCards1 from './components/home/HomeCards1';
+import Xbox from './components/home/Xbox';
+import HomeCards2 from './components/home/HomeCards2';
+import Carbon from './components/home/Carbon';
+import Follow from './components/home/Follow';
+import Links from './components/home/Links';
+import Footer from './components/layout/Footer';
+
+import MenuButton from './components/MenuButton';
+
+import AppProvider from './context/appContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <MenuButton />
+
+      <div className="container">
+        <Navbar />
+
+        <Showcase />
+        <HomeCards1 />
+        <Xbox />
+        <HomeCards2 />
+        <Carbon />
+        <Follow />
+      </div>
+
+      <Links />
+      <Footer />
+    </AppProvider>
   );
 }
 
